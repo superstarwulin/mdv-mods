@@ -1,0 +1,5 @@
+  INPORT=writer.IN:IN
+  OUTPORT=reader.OUT:OUT
+  INPORT=router.IN:NAME
+  router(mui/mdv-mods/common/repeater) OUT -> NAME reader(mui/mdv-mods/web/historyStateReader)
+  router OUT -> NAME writer(mui/mdv-mods/web/historyStateWriter)

@@ -1,0 +1,27 @@
+{
+  "name": "mdv-mods",
+  "description": "为mdv提供的一些公共模块",
+  "version": "4.1.0",
+  "keywords": [
+    "mdv mods"
+  ],
+  "feDependencies": {
+    "mui/zepto": "4.0.x",
+    "mui/fetch": "4.1.x",
+    "mui/datalazyload": "4.0.x",
+    "mui/xtemplate": "4.0.x"
+  },
+  "kissyVersion": "1.4.10",
+  "devDependencies": {
+    "babel-preset-es2015": "~6.3.13",
+    "babel-preset-stage-1": "~6.3.13",
+    "colors": "^0.6.2",
+    "del": "^0.1.3",
+    "gulp": "3.x.x",
+    "gulp-babel": "~6.1.1",
+    "gulp-code": "~2.4.2",
+    "gulp-if": "~2.0.0",
+    "gulp-plumber": "^0.6.5",
+    "gulp-remove-use-strict": "0.0.2"
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "modules": {
+    "made/mdv/treeSelecter": {
+      "requires": [
+        "dom",
+        "event",
+        "io",
+        "mui/mdv-mods/element/vueRender",
+        "made/inside/resourceTree/index.css",
+        "vframe/components/tree/component"
+      ]
+    },
+    "mui/datalazyload/index": {
+      "requires": [
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/fetch/fetch": {
+      "requires": [
+        "mui/babel-polyfill/index"
+      ]
+    },
+    "mui/fetch/iframePostForm": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/fetch/jsonp": {
+      "requires": [
+        "mui/fetch/fetch",
+        "mui/fetch/tool"
+      ]
+    },
+    "mui/mdv-mods/common/array": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common"
+      ]
+    },
+    "mui/mdv-mods/common/common": {
+      "requires": [
+        "mui/mdv/mdv2"
+      ]
+    },
+    "mui/mdv-mods/common/date": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common"
+      ]
+    },
+    "mui/mdv-mods/common/dom": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./array",
+        "./loader"
+      ]
+    },
+    "mui/mdv-mods/common/loader": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common"
+      ]
+    },
+    "mui/mdv-mods/common/models": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./string"
+      ]
+    },
+    "mui/mdv-mods/common/object": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common"
+      ]
+    },
+    "mui/mdv-mods/common/string": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common",
+        "./object",
+        "./loader"
+      ]
+    },
+    "mui/mdv-mods/common/validator": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common"
+      ]
+    },
+    "mui/mdv-mods/common/web": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./string"
+      ]
+    },
+    "mui/mdv-mods/component/fbpJson": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "../common/common",
+        "../common/models",
+        "../common/loader"
+      ]
+    },
+    "mui/mdv-mods/component/fbpString": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "mui/mdv-mods/lib/fbp",
+        "mui/mdv-mods/component/fbpJson"
+      ]
+    },
+    "mui/mdv-mods/component/pageLoader": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "../common/common",
+        "../common/object",
+        "../common/string",
+        "../common/dom"
+      ]
+    },
+    "mui/mdv-mods/element/base": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "../common/dom"
+      ]
+    },
+    "mui/mdv-mods/element/button": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/confirm": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/container": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/mdv-mods/element/datetime": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "../common/common",
+        "../common/loader",
+        "mui/zepto/event",
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/mdv-mods/element/echart": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "../common/loader"
+      ]
+    },
+    "mui/mdv-mods/element/form": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "../common/loader",
+        "../common/string",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/input": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "../common/common",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/message": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/mdv-mods/element/pager": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/radio": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "../common/common",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/rtTemplate": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/seller-react-mvvm/"
+      ]
+    },
+    "mui/mdv-mods/element/select": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "../common/common",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/sorter": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/uploader": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./common",
+        "./base",
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    },
+    "mui/mdv-mods/element/vueRender": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto",
+        "../common/date"
+      ]
+    },
+    "mui/mdv-mods/element/wizard": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/mdv-mods/element/xtplEdit": {
+      "requires": [
+        "mui/mdv/",
+        "kg/xtemplate/4.1.4/",
+        "dom",
+        "event"
+      ]
+    },
+    "mui/mdv-mods/element/xtplRender": {
+      "requires": [
+        "mui/mdv/mdv2",
+        "./base",
+        "mui/xtemplate/"
+      ]
+    },
+    "mui/xtemplate/index": {
+      "requires": [
+        "./runtime"
+      ]
+    },
+    "mui/zepto/event": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/form": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/fx": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/fx_methods": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/gesture": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/ie": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/selector": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/stack": {
+      "requires": [
+        "mui/zepto/zepto"
+      ]
+    },
+    "mui/zepto/touch": {
+      "requires": [
+        "mui/zepto/zepto",
+        "mui/zepto/event"
+      ]
+    }
+  },
+  "packages": {
+    "kissy": {
+      "base": "//g.alicdn.com/kissy/k/1.4.14/",
+      "version": "1.4.14"
+    },
+    "mui/babel-polyfill": {
+      "debug": true,
+      "group": "tm",
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/babel-polyfill/6.2.3/",
+      "version": "6.2.3"
+    },
+    "mui/datalazyload": {
+      "debug": true,
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/datalazyload/4.0.17/",
+      "version": "4.0.17"
+    },
+    "mui/fetch": {
+      "debug": true,
+      "group": "tm",
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/fetch/4.1.6/",
+      "version": "4.1.6"
+    },
+    "mui/jquery": {
+      "debug": true,
+      "group": "tm",
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/jquery/4.0.1/",
+      "version": "4.0.1"
+    },
+    "mui/mdv-mods": {
+      "debug": true,
+      "group": "tm",
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/mdv-mods/4.1.0/",
+      "version": "4.1.0"
+    },
+    "mui/xtemplate": {
+      "debug": true,
+      "group": "tm",
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/xtemplate/4.0.9/",
+      "version": "4.0.9"
+    },
+    "mui/zepto": {
+      "debug": true,
+      "group": "tm",
+      "ignorePackageNameInUri": true,
+      "path": "//g.alicdn.com/mui/zepto/4.0.3/",
+      "version": "4.0.3"
+    }
+  }
+}

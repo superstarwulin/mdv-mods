@@ -1,0 +1,5 @@
+  INPORT=tabs.IN:IN
+  INPORT=batch.IN:DATA
+  OUTPORT=tabs.OUT:OUT
+  '_ztls' -> NAME state(mui/mdv-mods/web/historyState) OUT -> DEFTAB tabs(mui/mdv-mods/dom/Tabs) CURTAB -> IN state
+  'mui/mdv-mods/demo/zebra-search' -> IN loader OUT -> PROCESSOR batch(mui/mdv-mods/common/batch) OUT -> PANELS tabs

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在DOM之中描述逻辑</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<script type="text/template" id="xtpl_test">
+{{#each(this)}}
+{{title}}<br/>
+{{/each}}
+</script>
+
+<div class="tm-mdv" mdv-cls="mui/mdv-mods/common/common//mDirect" id="data1" mdv-model-in="#form1 url -> (mui/mdv-mods/common/loader//jsonp) "></div>
+<form id="form1" action="https://list.tmall.com/api/s.htm?from=mtop&_input_charset=utf-8&unify=yes&page_size=20&page_no=">
+    关键词：<input type="text" name="q" value="连衣裙"/>
+</form>
+<div class="tm-mdv" mdv-cls="mui/mdv-mods/element/xtplRender" mdv-model-tpl="'#xtpl_test' -> (mui/mdv-mods/common/dom//getDom) -> (mui/mdv-mods/common/dom//getHtml)" mdv-model-data="#data1 out -> (mui/mdv-mods/common/object//mGet:key='item')"></div>
+
+</body>
+</html>
+<script language="javascript" src="//g.tbcdn.cn/??mui/feloader/4.0.26/feloader-min.js,mui/mdv/4.1.0/seed.js,mui/mdv-mods/4.1.0/seed.js,mui/datalazyload/4.0.17/seed.js"></script>
+<script language="javascript">
+    require(["mui/mdv/mdv2","mui/mdv-mods/common/loader", "mui/mdv-mods/component/pageLoader"], function (Mdv, Loader,PageLoader) {
+        var mdvIn = new Mdv();
+        mdvIn.defineModel(true, function (name) {
+            return Mdv.createLiteral(name)
+                    .then(Loader.require)
+        })
+        var pageLoader = new PageLoader(mdvIn);
+        pageLoader.addElement("form", "mui/mdv-mods/element/form");
+        pageLoader.addElement("input", "mui/mdv-mods/element/input");
+        pageLoader.addElement(".tm-mdv");
+        //定义别名映射
+    })
+</script>

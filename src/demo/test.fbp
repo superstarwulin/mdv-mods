@@ -1,0 +1,10 @@
+  INPORT=layout.IN:IN
+  INPORT=result.TPL:TPL
+  INPORT=input1.VALUE:VALUE
+  OUTPORT=merge.OUT:OUT
+  layout(mui/mdv-mods/dom/StaticContainer:input_keyword/result_search) ELEMENTS[0] -> IN input1(mui/mdv-mods/dom/TextInput) OUT -> IN merge(mui/mdv-mods/common/direct)
+  layout ELEMENTS[1] -> IN result(mui/mdv-mods/dom/XtplRender) OUT -> IN merge
+  layout OUT -> IN merge
+  input1 VALUE -> VALUE kvObject(mui/mdv-mods/common/kvObject) OUT -> PARAMS url(mui/mdv-mods/common/url) OUT -> IN data1(mui/mdv-mods/data/JsonpLoad) OUT -> DATA result
+  'q' -> KEY kvObject
+  'https://list.tmall.com/api/s.htm?from=mtop&_input_charset=utf-8&unify=yes&page_size=20&page_no=' -> URL url

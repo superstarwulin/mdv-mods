@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>采用流式编程</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div id="panel"></div>
+</body>
+</html>
+<script language="javascript" src="//g.tbcdn.cn/??mui/feloader/4.0.8/feloader-min.js,mui/mdv/4.0.1/seed.js,mui/mdv-mods/4.0.1/seed.js"></script>
+<script language="javascript">
+    require(["mui/mdv/mdv2", "mui/mdv-mods/demo/zebra-tabs-list-search"], function (Mdv, Mod) {
+        Mod({
+            "in": Mdv.createLiteral(document.getElementById("panel")),
+            "data": Mdv.createLiteral([
+                {
+                    "name": "时尚女装",
+                    "keyword": "女装",
+                    "view": "cascade2"
+
+                },
+                {
+                    "name": "品质男装",
+                    "keyword": "男装",
+                    "view": "grid2"
+                },
+                {
+                    "name": "标:天猫国际",
+                    "auction_tag": "13186",
+                    "view": "grid1"
+                },
+                {
+                    "name": "类目:帆布鞋",
+                    "cat": "50076895"
+                },
+                {
+                    "name": "指定商品",
+                    "item_ids": "44689972524,43818733912,37236985347,44070362782,41152905814,17665091664,40318990049,21874619959"
+                },
+                {
+                    "name": "日用百货",
+                    "keyword": ""
+                },
+                {
+                    "name": "美食特产",
+                    "keyword": "特产"
+                },
+                {
+                    "name": "数码家电",
+                    "keyword": ""
+                },
+                {
+                    "name": "美容护肤",
+                    "keyword": ""
+                }
+            ])
+        }).out.then(function () {
+                    console.log("finished!");
+                });
+    })
+</script>

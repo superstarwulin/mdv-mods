@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>采用流式编程</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<script type="text/template" id="xtpl_test">
+    {{#each(item)}}
+    {{title}}<br/>
+    {{/each}}
+</script>
+<div id="panel">
+    关键词：<input id="input_keyword" type="text" name="q"/>
+    <div id="result_search" class="tm-mdv" mdv-cls="mui/mdv-mods/element/xtplShow" data-tpl="#xtpl_test" mdv-model-data="#data1.value.item"></div>
+</div>
+</body>
+</html>
+<script type="application/fbp" id="fbp">
+  INPORT=layout.EL:IN
+  INPORT=result.TPL:TPL
+  INPORT=input1.VALUE:VALUE
+  OUTPORT=merge.OUT:OUT
+  '{"input":"#input_keyword","result":"#result_search"}' -> IN json1(mui/mdv-mods/common/string//toJson) OUT -> SELECTORS layout(mui/mdv-mods/element/container)
+  layout INPUT -> EL input1(mui/mdv-mods/element/input) OUT -> IN merge(mui/mdv-mods/common/common//mDirect)
+  layout RESULT -> EL result(mui/mdv-mods/element/xtplRender) OUT -> IN merge
+  '{"q":"%{q}"}' -> IN json2(mui/mdv-mods/common/string//toJson) OUT -> IN kvObject(mui/mdv-mods/common/object//mObject) OUT -> PARAMS url(mui/mdv-mods/common/string//mUrl) OUT -> IN data1(mui/mdv-mods/common/loader//jsonp) OUT -> DATA result
+  input1 VALUE -> Q kvObject
+  'https://list.tmall.com/api/s.htm?from=mtop&_input_charset=utf-8&unify=yes&page_size=20&page_no=' -> IN url
+</script>
+<script language="javascript" src="//g.tbcdn.cn/??mui/feloader/4.0.26/feloader-min.js,mui/mdv/4.1.0/seed.js,mui/mdv-mods/4.1.0/seed.js"></script>
+<script language="javascript">
+    require(["mui/mdv/mdv2", "mui/mdv-mods/component/fbpString"], function (Mdv, FbpString) {
+        new FbpString({
+            "fbpString": document.getElementById("fbp").innerHTML,
+            "params": {
+                "in": document.getElementById("panel"),
+                "value": '连衣裙',
+                "tpl": document.getElementById("xtpl_test").innerHTML
+            }
+        }).getModel("out")
+                .then(function (el) {
+                    console.log("finished", el);
+                }, function (err) {
+                    console.log("error:", err);
+                });
+    })
+</script>

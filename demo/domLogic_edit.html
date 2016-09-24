@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>在DOM之中描述逻辑</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<script language="javascript">
+    var initData = [
+        {
+            name: 'sku',
+            value: 'green',
+            text: '绿色',
+            checked: false
+        },
+        {
+            name: 'sku',
+            value: 'red',
+            text: '红色',
+            checked: false
+        },
+        {
+            name: 'sku',
+            value: 'yellow',
+            text: '黄色',
+            checked: false
+        },
+        {
+            name: 'sku',
+            value: 'grey',
+            text: '灰色',
+            checked: false
+        }
+    ];
+</script>
+
+<script type="text/template" id="xtpl_edit">
+    <ul class="v-sku">
+        {{#each(this)}}
+      <li>
+        <input type="checkbox" data-bind="data[{{xindex}}].checked" name="sku" value="{{value}}">
+        <input type="text" data-bind="data[{{xindex}}].text" style="background-color:{{value}}">
+      </li>
+        {{/each}}
+      <li>
+        <input type="checkbox" data-bind="data[*].checked">
+        全部
+      </li>
+    </ul>
+</script>
+
+<script type="text/template" id="xtpl_show">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>版本</th>
+            <th>图片</th>
+            <th>已有图片</th>
+        </tr>
+        {{#each(this)}}
+            {{#if(checked)}}
+            <tr>
+                <td>{{value}}</td>
+                <td style="background-color:{{value}}">{{text}}</td>
+                <td><input type="file"></td>
+                <td>当前无图片</td>
+            </tr>
+            {{/if}}
+        {{/each}}
+    </table>
+</script>
+
+<data id="data1" mdv-model-source="%global.initData" type="raw"/>
+<div id="edit1" class="tm-mdv" mdv-cls="mui/mdv-mods/element/xtplEdit" data-tpl="#xtpl_edit" mdv-model-data="#data1.value"></div>
+<div id="show1" class="tm-mdv" mdv-cls="mui/mdv-mods/element/xtplShow" data-tpl="#xtpl_show" mdv-model-data="#edit1.value"></div>
+
+</body>
+</html>
+<script language="javascript"
+        src="//g.alicdn.com/??kissy/k/1.4.10/seed-min.js,mui/datalazyload/3.1.5/seed.js,mui/mdv/3.1.0/seed.js,mui/mdv-mods/3.0.0/seed.js"></script>
+<script language="javascript">
+    KISSY.ready(function (S) {
+        S.use("mui/mdv/", function (S, Mdv) {
+            var mdv = Mdv.instance();
+            //定义别名映射
+            mdv.addAlias("global", "mui/mdv-mods/common/global");
+            //DOM自定义标签映射
+            var tagMap = {
+                "data": "mui/mdv-mods/element/data",
+                "form": "mui/mdv-mods/element/form",
+                "input": "mui/mdv-mods/element/input",
+                "chart": "mui/mdv-mods/element/chart"
+            }
+            S.each(tagMap, function (modName, tagName) {
+                mdv.addElement(tagName, modName);
+            });
+            //初始化模块
+            mdv.addElement(".tm-mdv");
+        })
+    });
+</script>

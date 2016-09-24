@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>使用数据正向流(then)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<script type="text/template" id="xtpl_test">
+    {{#each(item)}}
+    {{title}}<br/>
+    {{/each}}
+</script>
+<div id="panel">
+    关键词：<input id="input_keyword" type="text" name="q"/>
+
+    <div id="result_search" class="tm-mdv" mdv-cls="mui/mdv-mods/element/xtplShow" data-tpl="#xtpl_test"
+         mdv-model-data="#data1.value.item"></div>
+</div>
+</body>
+</html>
+<script language="javascript"
+        src="//g.tbcdn.cn/??mui/feloader/4.0.26/feloader-min.js,mui/mdv/4.1.0/seed.js,mui/mdv-mods/4.1.0/seed.js"></script>
+<script language="javascript">
+    require(["mui/mdv/mdv2",
+        "mui/mdv-mods/common/common",
+        "mui/mdv-mods/common/object",
+        "mui/mdv-mods/common/string",
+        "mui/mdv-mods/common/loader",
+        "mui/mdv-mods/common/dom",
+        "mui/mdv-mods/element/input",
+        "mui/mdv-mods/element/xtplRender"
+    ], function (Mdv, Common,MObject,String, Loader, Dom, TextInput, XtplRender) {
+        Mdv.createLiteral("#input_keyword")
+                .then(Dom.getDom)
+                .then(function(){console.log(arguments[0])})
+                .thenMdv(TextInput, {
+                    value: "连衣裙"
+                }, 'el', 'valueRealTime')
+                .then(function(){console.log(arguments[0])})
+                .thenMdv(MObject.mObject, {
+                    in: {"q": "%{q}"}
+                }, 'q', 'out')
+                .then(function(){console.log(arguments[0])})
+                .thenMdv(String.mUrl, {
+                    in: 'https://list.tmall.com/api/s.htm?from=mtop&_input_charset=utf-8&unify=yes&page_size=20&page_no='
+                }, 'params', 'out')
+                .then(Loader.jsonp)
+                .thenMdv(XtplRender, {
+                    el: Mdv.createLiteral("#result_search").then(Dom.getDom),
+                    tpl: Mdv.createLiteral('#xtpl_test').then(Dom.getDom).then(Dom.getHtml),
+                }, 'data', 'out')
+                .then(function (el) {
+                    console.log("finished", el);
+                }, function (err) {
+                    console.log("error:", err);
+                })
+    })
+</script>
